@@ -158,25 +158,3 @@ function mailCheck(){
 
       }
 }
-
-function addrCheck(addr)
-{
-    var name=document.getElementById(addr).value;
-    var letters = /^[a-zA-Z0-9\s,.'-]{3,}$/;
-    if(!name.match(letters))
-      {
-      alert('Your have entered invalid address');
-      document.getElementById(addr).value="";
-      }
-}
-
-function pinNoCheck(){
-    var no = document.getElementById("pinNo").value;
-    var letters=/^[0-9]{6}$/;
-    if(!no.match(letters))    
-    {
-        alert("You have entered an incorrect Pincode ( Only 6 digit codes are allowed )")
-        document.getElementById("pinNo").value="";
-    }
-
-}

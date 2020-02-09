@@ -1,7 +1,11 @@
 
 function removeOptions(selectbox)
 {
-    selectbox.options.length=1;
+    var select = document.getElementById(selectbox);
+    var length = select.options.length;
+    for (i = 1; i < length; i++) {
+         select.options[i] = null;
+    }
 }
 /* 
 function countrySel(){
@@ -69,7 +73,6 @@ function stateSel(){
             }
         }
     }
-    removeOptions(document.getElementById("selectCity")); 
 }
 
 
@@ -105,96 +108,61 @@ function citySel(){
 
 }
 
-
-
-/*
-function stateSel(){
-    var countryS=document.getElementById("selectCountry").value;
-    var stateS=document.getElementById("selectState");
-    var cityS=document.getElementById("selectCity");
-    stateS.length=1;
-    cityS.length=1;
-
-    let req=new XMLHttpRequest();
-    req.open('GET',list);
-    req.responseType='json';
-    req.send();
-
-        req.onreadystatechange=function(){
-            var add=req.response;
-            for(var i=0;i<add.length;i++){
-                if(countryS==add[i].name){
-                    for(var s in add[i].states){
-                        var op=document.createElement('option');
-                        op.textContent=s;
-                        
-                        stateS.appendChild(op);
-                    }
-                }
-            }
-        }
-}
-function citySel(){
+function addrValidator(){
     
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("submitAddr");
+    var span = document.getElementsByClassName("close")[0];
+    var a1=document.getElementById("addr1").value;
+    var a2=document.getElementById("addr2").value;
+    var a3=document.getElementById("addr3").value;
     var countryS=document.getElementById("selectCountry").value;
     var stateS=document.getElementById("selectState").value;
-    var cityS=document.getElementById("selectCity");
+    var cityS=document.getElementById("selectCity").value;
+    var no = document.getElementById("pinNo").value;
 
-//    cityS.length=1;
-    let req=new XMLHttpRequest();
-    req.open('GET',list);
-    req.responseType='json';
-    req.send();
-    req.onreadystatechange=function(){
-        var add=req.response;
-        for(var i=0;i<add.length;i++){
-            if(countryS==add[i].name){
-                var ct=add[i].states;
-                for(var s in ct){
-                    if(s==stateS){
-                        var k=add[i].states[s];
-                        
-                    for(var j=0;j<k.length;j++){
-                        
-                        var op=document.createElement('option');
-                        op.textContent=k[j];
-                        cityS.appendChild(op);
-                }
-            }
 
-                }
+    if(a1==""||a1==null||a2==""||a2==null||a3==""||a3==null||countryS=="Select Country"||stateS=="Select State"||cityS=="Select City"||no==""||no==null)
+    {
+        alert("Enter all required details")
+    }
+    else
+    {        
+        btn.onclick = function() {
+            modal.style.display = "block";
+            document.getElementById("finalText").innerHTML=`Your Address is: ${a1}, ${a2}, ${a3}, ${cityS}, ${no}`
+            document.getElementById("nextPage").type="submit"
+        }
+
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
+    }
+}
+
+
+function addrCheck(addr)
+{
+    var name=document.getElementById(addr).value;
+    var letters = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+    if(!name.match(letters))
+      {
+      alert('Your have entered invalid address');
+      document.getElementById(addr).value="";
+      }
+}
+
+function pinNoCheck(){
+    var no = document.getElementById("pinNo").value;
+    var letters=/^[0-9]{6}$/;
+    if(!no.match(letters))    
+    {
+        alert("You have entered an incorrect Pincode ( Only 6 digit codes are allowed )")
+        document.getElementById("pinNo").value="";
     }
 
 }
- */
 
-//function modalCall(){
-    
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("submitAddr");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-         modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-//}
