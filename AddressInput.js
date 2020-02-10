@@ -7,30 +7,6 @@ function removeOptions(selectbox)
          select.options[i] = null;
     }
 }
-/* 
-function countrySel(){
-    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countries%2Bstates%2Bcities.json';
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onreadystatechange = function() {
-
-        var text = request.response;
-        var select = document.getElementById("selectCountry");
-        for(var i=0;i<text.length;i++){
-            var opt=text[i].name;
-            var el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            select.appendChild(el); 
-        }
-    }
-    removeOptions(document.getElementById("selectCity")); 
-    removeOptions(document.getElementById("selectState")); 
-         
-}
- */
 
 var list="https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json"
 window.onload=function(){   
