@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <title>GE Healthcare Registration</title>
+    <link href="RegFormNew.css" rel="stylesheet"> 
+    <link href="AddressInput.css" rel="stylesheet"> 
+    <script src="AddressInput.js" ></script>
+    <script type="text/javascript" src="countryStateCity.json"></script>
+
+    <header>
+        <div class="logo">
+            <a href="RegFormNew.html"><img src="https://www.gehealthcare.com/-/jssmedia/6d5b64dcd4e44ad785909b3ab0d4b6c0.svg?la=en-US" alt="GE Logo" style="margin-left: 100px; margin-right: 100px;" id="img"></a>
+        </div>
+
+        <div class="toggle-content">
+            <label for="toggle">
+                <img src="more.png" alt="more icon">
+            </label>
+        </div>
+
+        <input type="checkbox" id="toggle">
+        <nav class="navbar">
+            <a href="">About Us</a>
+            <a href="page2.html">Products</a>
+            <a href="">Shops</a>
+            <a href="">Insights</a>
+        </nav>
+    </header>
+
+    <body>
+
+        <div>
+            <form method="" action="RegFormNew.html" oncopy="return false" oncut="return false" onpaste="return false">
+                <table class="tableStyle" >
+                    <p style="font-size:xx-large; text-align: center; ">Registration Form (Address)</p>
+                    <tr>
+                        <th>Enter your Address</th>
+                        <td><input type="text" id="addr1" maxlength="40" title="Enter your Adderss" placeholder=" Address line 1" onchange="addrCheck('addr1')" required/></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><input type="text" id="addr2" maxlength="40" title="Enter your Adderss" placeholder=" Address line 2" onchange="addrCheck('addr2')" required/></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><input type="text" id="addr3" maxlength="40" title="Enter your Adderss" placeholder=" Address line 3" onchange="addrCheck('addr3')" required/></td>
+                    </tr>
+                    <tr>
+                        <th>Choose your Country</th>
+                        <td>
+                            <select id="selectCountry" onchange="stateSel()" style="font-size: large; margin: 0px 10px 0px 10px; padding: 0px 10px 0px 10px; width: 300px; height: 30px;">
+                                <option >Select Country</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Choose your State</th>
+                        <td>
+                            <select id="selectState" onchange="citySel()" style="font-size: large; margin: 0px 10px 0px 10px; padding: 0px 10px 0px 10px; width: 300px; height: 30px;">
+                                <option >Select State</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Choose your City</th>
+                        <td>
+                            <select id="selectCity"  style="font-size: large; margin: 0px 10px 0px 10px; padding: 0px 10px 0px 10px; width: 300px; height: 30px;">
+                                <option >Select City</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Enter your Pincode</th>
+                        <td><input type="Number" placeholder=" Enter your Pincode" id="pinNo" onchange="pinNoCheck()" required/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" class="buttonStyle"  value="Submit" id="submitAddr" onclick="addrValidator()"/>
+                        </td>
+                    </tr>
+                </table>
+            
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <label style="width: 100%; font-size: larger;">Thank You for Registering</label>
+                    <br><br>
+                    <label id="finalText">..</label>
+                    <br><br>
+                    <input  class="buttonStyle" value="Next" id="nextPage" onclick="jump()"/>                
+
+                </div>
+            </div>
+            </form>
+        </div>
+
+
+
+    </body>
+    
+    <footer>
+        <nav>
+            <a href="">Contact Us</a>
+            <span class="cpy">&copy2020 General Electric</span>
+            <a href="">Privacy Policy</a> 
+            <a href="">Terms and Conditions</a>
+            <a href="">Security</a> 
+            <a href="">Privacy Shield</a>   
+        </nav>
+    </footer>
+
+</html>

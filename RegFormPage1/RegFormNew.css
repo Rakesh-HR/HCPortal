@@ -1,0 +1,224 @@
+.tableStyle{
+    font-size: larger;
+    border: 1px black solid;
+    margin: 50px 50px 50px 50px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left:auto; 
+    margin-right:auto;
+    box-shadow: black;    
+    box-shadow:5px 5px 5px 5px rgba(0,0,0,0.2); 
+}
+
+td, th{
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    width: 250px;
+    height: 50px;
+}
+
+.buttonStyle{
+    font-size: larger;
+    border-radius: 5px;
+}
+
+.radioStyle{
+    height: 20px;
+    width: 20px;
+}
+
+input{
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+header{
+    display: flex;
+    border-bottom: 1px solid rgb(190, 189, 189);
+    padding-bottom: 10px;
+}
+.logo{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+header nav{
+    display:flex;
+    margin-top: 18px;
+    margin-left: 75px;
+}
+header nav a{
+    text-decoration: none;
+    color:rgb(11, 156, 240);
+    text-align: center;
+    width: 170px;
+    font-size: larger;
+    margin:1px 10px 1px 10px;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+header nav a:hover{
+    transition: 1.5s ease;
+
+    background-color: lightskyblue;
+    color:white;
+    
+}
+#toggle{
+    display: none;
+}
+.toggle-content{
+    
+    display: none;
+    position: absolute;
+    right:20px;
+    top:20px;
+    
+}
+.toggle-content label{
+    cursor: pointer;
+    
+}
+.toggle-content label div{
+    background-color:rgb(11, 156, 240);
+    width:35px;
+    height: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+}
+
+
+.radio-content {
+    display: block;
+    position: relative;
+    padding-left:15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    
+  }
+label{
+    font-size: 20px;
+}
+.radio-content input {
+    opacity: 0;
+}
+.radio-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(233, 233, 236);
+    border-radius: 40%;
+}
+.radio-content input:checked ~ .radio-box {
+    background-color:#005EB8
+}
+footer ul{
+    list-style: none;
+}
+footer{
+    display: flex;
+    border-top: 1px solid rgb(190, 189, 189);
+    background-color: rgb(255, 255, 255);
+}
+footer nav{
+    display:flex;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+footer nav a{
+    text-decoration: none;
+    color:rgb(11, 156, 240);
+    text-align: center;
+    
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding:12px 20px;
+    
+}
+footer .cpy{
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding:12px 20px;
+}
+footer nav a:hover{
+    transition: 1s ease;
+
+    color:darkslateblue;
+}
+
+@media screen and (max-width:1200px){
+    .navbar{
+        flex-direction: column;
+        display:none;
+    }
+    #toggle:checked + .navbar{
+        display:flex;
+        position: absolute;
+        right: 10px;
+        top: 80px;
+        background-color: rgb(236, 236, 236);
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .toggle-content{
+        display: flex;
+        justify-content: flex-end;
+    }
+    footer nav{
+        flex-direction: column;
+        margin-left:0px;
+    }
+
+    #img{
+        margin-right:2px;
+        margin-left:2px;
+    }
+    header nav a{
+        text-align: center;
+        width: 170px;
+        height: 40px;
+        font-size: larger;
+        margin:2px 10px 1px 10px;
+        padding-top: 5px;
+        border-radius: 5px;
+        background-color: white;
+
+    }
+    
+    
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    border-radius: 0px;
+}
+
+.regAllignment{
+    margin: 10px  10px  10px  10px ;
+    color:rgb(94, 94, 94);
+    size: large;
+}
+.allignCol{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+
+.alertLabels{
+    height: 10px;
+    font-size: small;
+    color: red;
+}

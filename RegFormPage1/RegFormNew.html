@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <title>GE Healthcare Registration</title>
+    <link href="RegFormNew.css" rel="stylesheet"> 
+    <script src="RegFormNew.js" ></script>
+
+    <header>
+        <div class="logo">
+            <a href="RegFormNew.html"><img src="https://www.gehealthcare.com/-/jssmedia/6d5b64dcd4e44ad785909b3ab0d4b6c0.svg?la=en-US" alt="GE Logo" style="margin-left: 100px; margin-right: 100px;" id="img"></a>
+        </div>
+
+        <div class="toggle-content">
+            <label for="toggle">
+                <img src="more.png" alt="more icon">
+            </label>
+        </div>
+
+        <input type="checkbox" id="toggle">
+        <nav class="navbar" style=" font-family:GE Inspira Sans;">
+            <a href="">About Us</a>
+            <a href="page2.html">Products</a>
+            <a href="">Shops</a>
+            <a href="">Insights</a>
+        </nav>
+    </header>
+
+    <body>
+        <div>
+
+
+            <form  method="" action="AddressInput.html" oncopy="return false" oncut="return false" onpaste="return false"  style="margin: 20px 80px 20px 100px; font-family:GE Inspira Sans;">
+                    <p style="font-size:xx-large; color: royalblue;">Register for MyGEHealthcare</p>
+                        <p style="font-size:x-large; ">Get easy access to training and education, track your order status, view your invoices, place order for parts and accessories and much more!</p >
+                    <div class ="allignCol">
+                        <div class="regAllignment" >
+                            <label id="nameA">Enter  your Name</label><br>
+                            <input type="text" name="fn" id="name" maxlength="20" title="Enter your Name" placeholder=" Enter your Name" onblur="nameCheck()" required/>
+                            <br><label id="nameAlert" class="alertLabels" > </label>
+                        </div>
+                        <div  class="regAllignment" >
+                            <label id="emailA" > Enter your Email</label><br>
+                            <input type="Email" placeholder=" Enter your Email" id="email" onblur="mailCheck()" required/>
+                            <br><label id="emailAlert" class="alertLabels" > </label>
+                        </div > 
+                        <div class="regAllignment" >
+                            <label id="numberA">Enter your Mobile</label><br>
+                            <input type="Number" placeholder=" Enter your Ph. No" id="phno" onblur="phNoCheck()" required/>
+                            <br><label id="numberAlert" class="alertLabels" > </label>
+                        </div>
+                        <div class="regAllignment" >
+                            <label id="ageA">Enter your Age</label><br>
+                            <input type="Number" placeholder=" Enter your Age" id ="age" onblur="ageCheck()"  required/>
+                            <br><label id="ageAlert" class="alertLabels" > </label>
+                        </div>
+                        <div class="regAllignment" >
+                            <label id="p1A">Enter your Password</label><br>
+                            <input type="password" placeholder=" Enter your Password" id ="psswrd1" onblur="psswrd1Check()"  required/>
+                            <br><label id="p1Alert" class="alertLabels" > </label>
+                        </div>                        
+                        <div class="regAllignment" >
+                            <label id="p2A">Enter your Password Again</label><br>
+                            <input type="password" placeholder=" Enter your Password again" id ="psswrd2" onblur="psswrd2Check()"  required/>
+                            <br><label id="p2Alert" class="alertLabels" > </label>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="regAllignment">
+                            <input class="buttonStyle" type="submit" value="Next Page" id="buttonNext" onclick="submitForm()" />
+                    </div>
+                    
+                    
+            </form>
+        </div>
+    </body>
+    
+    <footer >
+        <nav  style=" font-family:GE Inspira Sans;">
+            <a href="">Contact Us</a>
+            <span class="cpy">&copy2020 General Electric</span>
+            <a href="">Privacy Policy</a> 
+            <a href="">Terms and Conditions</a>
+            <a href="">Security</a> 
+            <a href="">Privacy Shield</a>   
+        </nav>
+    </footer>
+
+</html>
