@@ -32,7 +32,7 @@ function countrySel(){
 }
  */
 
-var list="https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countries%2Bstates%2Bcities.json"
+var list="https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json"
 window.onload=function(){   
     var countryS=document.getElementById("selectCountry");
     let req=new XMLHttpRequest();
@@ -54,7 +54,8 @@ window.onload=function(){
 function stateSel(){
     var selected = document.getElementById("selectState");
     var country=document.getElementById("selectCountry").value
-    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countries%2Bstates%2Bcities.json';
+    selected.length=1;
+    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
@@ -81,8 +82,9 @@ function citySel(){
     var countryS=document.getElementById("selectCountry").value;
     var stateS=document.getElementById("selectState").value;
     var cityS=document.getElementById("selectCity");
+    cityS.length=1;
 
-    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countries%2Bstates%2Bcities.json';
+    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json';
     let req=new XMLHttpRequest();
     req.open('GET',requestURL);
     req.responseType='json';
