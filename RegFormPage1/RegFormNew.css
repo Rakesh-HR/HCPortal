@@ -1,37 +1,13 @@
-.tableStyle{
-    font-size: larger;
-    border: 1px black solid;
-    margin: 50px 50px 50px 50px;
-    padding: 10px 10px 10px 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin-left:auto; 
-    margin-right:auto;
-    box-shadow: black;    
-    box-shadow:5px 5px 5px 5px rgba(0,0,0,0.2); 
-}
-
-td, th{
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    width: 250px;
-    height: 50px;
-}
-
 .buttonStyle{
     font-size: larger;
     border-radius: 5px;
 }
 
-.radioStyle{
-    height: 20px;
-    width: 20px;
-}
+
 
 input{
     height: 30px;
     width: 300px;
-    border-radius: 5px;
 }
 
 header{
@@ -90,32 +66,13 @@ header nav a:hover{
 }
 
 
-.radio-content {
-    display: block;
-    position: relative;
-    padding-left:15px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    
-  }
+
 label{
     font-size: 20px;
+    font-family:GE Inspira Sans;
+    font-weight: 100;
 }
-.radio-content input {
-    opacity: 0;
-}
-.radio-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: rgb(233, 233, 236);
-    border-radius: 40%;
-}
-.radio-content input:checked ~ .radio-box {
-    background-color:#005EB8
-}
+
 footer ul{
     list-style: none;
 }
@@ -134,22 +91,26 @@ footer nav a{
     color:rgb(11, 156, 240);
     text-align: center;
     
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding:12px 20px;
+    font-family:GE Inspira Sans;
+        padding:12px 20px;
     
 }
 footer .cpy{
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding:12px 20px;
+    font-family:GE Inspira Sans;    padding:12px 20px;
 }
 footer nav a:hover{
     transition: 1s ease;
 
     color:darkslateblue;
 }
+select{
+    font-size: large; 
+    margin: 0px 10px 0px 0px; 
+    padding: 0px; 
 
+    height: 40px;
+    width: 300px;
+}
 @media screen and (max-width:1200px){
     .navbar{
         flex-direction: column;
@@ -209,11 +170,13 @@ input{
     margin: 10px  10px  10px  10px ;
     color:rgb(94, 94, 94);
     size: large;
+    font-family:GE Inspira Sans;
 }
 .allignCol{
     display: flex;
     flex-wrap: wrap;
     width: 70%;
+    font-family:GE Inspira Sans;
 }
 
 
@@ -221,4 +184,29 @@ input{
     height: 10px;
     font-size: small;
     color: red;
+    font-family:GE Inspira Sans;
 }
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.1); 
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    font-family:GE Inspira Sans;
+  }

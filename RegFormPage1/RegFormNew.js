@@ -1,29 +1,4 @@
-function submitForm(){
-    var no = document.getElementById("phno").value;
-    var age = document.getElementById("age").value;
-    var name=document.getElementById("name").value;
-    var email=document.getElementById("email").value;
-    password1 = document.getElementById("psswrd1").value;
-    password2 = document.getElementById("psswrd2").value;
 
-    if(no == "" || no== null || age == "" || age== null || name == "" || name== null || email == "" || email== null ||password1==""||password1==null ||password2==""||password2==null){
-        /* alert("Enter all nesessary details")
-        (no == "" || no== null) ? document.getElementById("phno").style.borderColor="red": document.getElementById("phno").style.borderColor="red";
-        (age == "" || age== null) ? document.getElementById("age").style.borderColor="red": document.getElementById("age").style.borderColor="red";
-        (name == "" || name== null) ? document.getElementById("name").style.borderColor="red": document.getElementById("name").style.borderColor="red";
-        (email == "" || email== null) ? document.getElementById("email").style.borderColor="red": document.getElementById("email").style.borderColor="red"; */
-        psswrd1Check();
-        psswrd2Check();
-        ageCheck();
-        nameCheck();
-        mailCheck();
-        phNoCheck();
-    }
-    else
-    {   
-        alert("\n Name : "+name+"\n Ph. No : "+no+"\n Age : "+age+"\n Email Id : "+email)
-    }
-}
 var password1=""
 var password2=""
 function psswrd1Check(){
@@ -158,3 +133,185 @@ function mailCheck(){
 
       }
 }
+function addrCheck(addr)
+{
+    var name=document.getElementById(addr).value;
+    var letters = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+    if(!name.match(letters))
+      {
+      document.getElementById(addr+"A").innerText='Your have entered invalid address'
+      document.getElementById(addr).value="";
+      document.getElementById(addr).style.borderColor="red";
+      document.getElementById(addr+"L").style.color="red";
+      }
+      else{
+        document.getElementById(addr).style.borderColor="green";
+        document.getElementById(addr+"A").innerText=''
+        document.getElementById(addr+"L").style.color="black";
+      }
+}
+
+function pinNoCheck(){
+    var no = document.getElementById("pinNo").value;
+    var letters=/^[0-9]{6}$/;
+    if(!no.match(letters))    
+    {
+
+      document.getElementById("pinNoA").innerText='You have entered an incorrect Pincode ( Only 6 digit codes are allowed )'
+      document.getElementById("pinNo").value="";
+      document.getElementById("pinNo").style.borderColor="red";
+      document.getElementById("pinNoL").style.color="red";
+    }
+    else
+    {
+      document.getElementById("pinNo").style.borderColor="green";
+      document.getElementById("pinNoA").innerText=''
+      document.getElementById("pinNoL").style.color="black";
+    }
+
+}
+
+
+function removeOptions(selectbox)
+{
+    var select = document.getElementById(selectbox);
+    var length = select.options.length;
+    for (i = 1; i < length; i++) {
+         select.options[i] = null;
+    }
+}
+
+var list="https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json"
+window.onload=function(){   
+    var countryS=document.getElementById("selectCountry");
+    let req=new XMLHttpRequest();
+    req.open('GET',list);
+    req.responseType='json';
+    req.send();   
+    req.onreadystatechange=function(){
+        var add=req.response;
+        for(var i=0;i<add.length;i++){
+            var c=add[i].name;
+            var op=document.createElement('option');
+            op.textContent=c;      
+            countryS.appendChild(op);
+        }
+    }
+}
+
+
+function stateSel(){
+    var selected = document.getElementById("selectState");
+    var country=document.getElementById("selectCountry").value
+    selected.length=1;
+    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+        var text = request.response;
+        for(var i=0;i<text.length;i++){
+            var opt=text[i].name;
+            if(opt==country){
+                for(var j in text[i].states){
+                    var opt1=j;
+                    var el = document.createElement("option");
+                    el.textContent = opt1;
+                    selected.appendChild(el);
+                }
+            }
+        }
+    }
+}
+
+
+function citySel(){
+    
+    var countryS=document.getElementById("selectCountry").value;
+    var stateS=document.getElementById("selectState").value;
+    var cityS=document.getElementById("selectCity");
+
+    let requestURL = 'https://raw.githubusercontent.com/Rakesh-HR/countries-states-cities-database/master/countryStateCity.json';
+    let req=new XMLHttpRequest();
+    req.open('GET',requestURL);
+    req.responseType='json';
+    req.send();
+    req.onload=function(){
+        var add=req.response;
+        for(var i=0;i<add.length;i++){
+            if(countryS==add[i].name){
+                var ct=add[i].states;
+                for(var s in ct){
+                    if(s==stateS){
+                        var k=add[i].states[s];
+                        for(var j=0;j<k.length;j++){
+                            var op=document.createElement("option");
+                            op.textContent=k[j];
+                            cityS.appendChild(op);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+function submitValidator(){
+    var no = document.getElementById("phno").value;
+    var age = document.getElementById("age").value;
+    var name=document.getElementById("name").value;
+    var email=document.getElementById("email").value;
+    password1 = document.getElementById("psswrd1").value;
+    password2 = document.getElementById("psswrd2").value;
+
+    
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("buttonNext");
+    var a1=document.getElementById("addr1").value;
+    var a2=document.getElementById("addr2").value;
+    var a3=document.getElementById("addr3").value;
+    var countryS=document.getElementById("selectCountry").value;
+    var stateS=document.getElementById("selectState").value;
+    var cityS=document.getElementById("selectCity").value;
+    var pinno = document.getElementById("pinNo").value;
+    
+
+
+    if(a1==""||a1==null||a2==""||a2==null||a3==""||a3==null||countryS=="Select Country"||stateS=="Select State"||cityS=="Select City"||pinno==""||pinno==null||no == "" || no== null || age == "" || age== null || name == "" || name== null || email == "" || email== null ||password1==""||password1==null ||password2==""||password2==null)
+    {
+      psswrd1Check();
+      psswrd2Check();
+      ageCheck();
+      nameCheck();
+      mailCheck();
+      phNoCheck();
+      pinNoCheck();
+      addrCheck("addr1")
+      addrCheck("addr2")
+      addrCheck("addr3")
+    }
+    else
+    {        
+     // alert("\n Name : "+name+"\n Ph. No : "+no+"\n Age : "+age+"\n Email Id : "+email)
+        
+        btn.onclick = function() {
+            modal.style.display = "block";
+            document.getElementById("finalText1").innerHTML="Name : "+name+"\n Ph. No : "+no+"\n Age : "+age+"\n Email Id : "+email;
+            document.getElementById("finalText2").innerHTML=`Your Address is: ${a1}, ${a2}, ${a3}, ${cityS}, ${pinno}`
+            document.getElementById("nextPage").type="submit"
+        }
+
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+}
+
+
+
